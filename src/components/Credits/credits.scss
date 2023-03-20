@@ -1,0 +1,11 @@
+#actors {
+  padding: 4% 0;
+  .actors {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: auto;
+    &--card {
+      margin: 0 20px;
+    }
+  }
+}
