@@ -1,7 +1,7 @@
 #header {
-  background: rgb(7, 7, 7);;
+  background: rgba(7, 7, 7, 0.47);;
   backdrop-filter: blur(4px);
-  border-bottom: 2px solid rgba(16, 15, 15, 0.56);
+  border-bottom: 2px solid rgba(238, 226, 226, 0.27);
   height: 4rem;
   position: fixed;
   padding: 10px 0;
@@ -15,7 +15,7 @@
     display: flex;
     justify-content:space-between;
     align-items: center;
-    flex-wrap: wrap;
+
     img {
       width: 190px;
       padding: 0 10px;

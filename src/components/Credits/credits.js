@@ -3,6 +3,8 @@ import axios from "axios";
 import {APIKEY} from "../../ApiKey/APIKEY";
 import './credits.scss'
 import Slider from "react-slick";
+import profile from '../../assets/img/profile.png'
+import {Link} from 'react-router-dom'
 
 
 const Credits = ({movieId}) => {
@@ -22,7 +24,6 @@ const Credits = ({movieId}) => {
         slidesToShow: 7,
         slidesToScroll: 3
     };
-    console.log(actors)
     return (
        <div id="actors">
            <div className="container">
@@ -30,9 +31,12 @@ const Credits = ({movieId}) => {
                   <Slider {...settings}>
                       {
                           actors.map(el => (
-                              <div className="actors--card">
-                                  <img src={`https://www.themoviedb.org/t/p/w138_and_h175_face/${el.profile_path}`} alt=""/>
-                                  <h4>{el.name}</h4>
+                              <div key={el.id} className="actors--card">
+                                  <Link to={`/movies/credits-cast/${el.id}`}>
+                                      { el.profile_path ? <img src={`https://www.themoviedb.org/t/p/w138_and_h175_face/${el.profile_path}`}  alt=""/>
+                                          : <img src={profile} width={140} height={180} alt=""/>}
+                                  </Link>
+                                  <h3>{el.name}</h3>
                                   <p>{el.character}</p>
                               </div>
                           ))

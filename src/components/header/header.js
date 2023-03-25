@@ -30,7 +30,6 @@ function Header({mode, handleMode}) {
                         <NavLink to={'/'}>Home</NavLink>
                         <NavLink to={'/popular'}>Popular</NavLink>
                         <NavLink to={'/top-rated'}>Top Rated</NavLink>
-                        <NavLink to={'/serial'}>TV Series</NavLink>
                     </div>
 
                     <div className="header--search">

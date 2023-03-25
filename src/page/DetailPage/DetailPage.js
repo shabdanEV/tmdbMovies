@@ -4,6 +4,7 @@ import './DetailPage.scss'
 import axios from "axios";
 import {APIKEY} from "../../ApiKey/APIKEY";
 import Credits from "../../components/Credits/credits";
+import Trailers from "../../components/Trailers/trailers";
 
 const DetailPage = () => {
     const {movieId} = useParams()
@@ -14,7 +15,6 @@ const DetailPage = () => {
         SetDetail(data)
 
     }
-    console.log(detail)
     useEffect(() => {
       getDetail()
     },[])
@@ -40,6 +40,7 @@ const DetailPage = () => {
            </div>
 
            <Credits movieId={movieId}/>
+           <Trailers movieId={movieId}/>
        </>
 
     );

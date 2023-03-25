@@ -1,0 +1,35 @@
+#detActors {
+  padding: 100px 0;
+  .detActors {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: start;
+    width: 90%;
+    img {
+
+      border-radius: 10px;
+    }
+    &--titles {
+      max-width: 800px;
+      h1 {
+        span {
+          font-size: 25px;
+        }
+      }
+      p {
+        span {
+          margin-left: 1%;
+        }
+      }
+      h4 {
+        display: block;
+        margin-block-start: 0 !important;
+        margin-block-end: 0 !important;
+
+
+      }
+    }
+
+  }
+}
