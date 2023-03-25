@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {APIKEY} from "../../../ApiKey/APIKEY";
-
+import Slider from "react-slick";
+import {Link} from 'react-router-dom'
 const ActorMovies = ({id}) => {
     const [movies, setMovies] = useState([])
     const getActorMovies = async (id,key) => {
@@ -12,16 +13,30 @@ const ActorMovies = ({id}) => {
     useEffect(() => {
         getActorMovies(id,APIKEY)
     },[])
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 7,
+        slidesToScroll: 3
+    };
     console.log(movies)
     return (
         <div className="container">
-            {
-              movies.map(movie => (
-                  <div>
-                      <img src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`} width={100} alt=""/>
-                  </div>
-              ))
-            }
+            <Slider {...settings}>
+                {
+                    movies.map(movie => (
+                        <div>
+                            <Link to={`/movies/movie/${movie.id}`}>
+                                <img src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`} width={140} alt=""/>
+
+                            </Link>
+                        </div>
+                    ))
+                }
+            </Slider>
+
+
             
         </div>
     );
