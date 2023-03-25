@@ -39,7 +39,7 @@ function Header({mode, handleMode}) {
                             <button style={{
                                 background: mode ? "black" : "white"
                             }} onClick={() => handleMode(mode)}
-                                    className="header--btn__one">{mode ? "write" : "black "} </button>
+                                    className="header--btn__one">{mode ? "white" : "black "} </button>
 
                         </div>
                     </div>
